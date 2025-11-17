@@ -28,6 +28,7 @@
     </style>
     <script>
         const maxGrade = 55;
+        const averageGrade = 43.59;
         const grades = {
             "n10004823": 55,
             "n01766605": 18,
@@ -107,11 +108,13 @@
             "n01767506": 53,
             "n10004341": 31
         }; 
+        
         function lookupGrade() {
             const username = document.getElementById('username').value;
             const result = document.getElementById('result');
             if (grades.hasOwnProperty(username)) {
-                result.textContent = `Current Grade for ${username}: ${grades[username]} out of ${maxGrade} (${((grades[username]/maxGrade)*100).toFixed(0)}%)`;
+                result.textContent = `Current Grade for ${username}: ${grades[username]} out of ${maxGrade} (${((grades[username]/maxGrade)*100).toFixed(0)}%).`;
+                result.textContent += ` Class average is ${averageGrade.toFixed(2)} (${((averageGrade/maxGrade)*100).toFixed(0)}%).`;
             } else {
                 result.textContent = `Username ${username} not found.`;
             }
