@@ -29,6 +29,7 @@
     <script>
         const maxGrade = 55;
         const averageGrade = 43.59;
+       
         const grades = {
             "n10004823": 55,
             "n01766605": 18,
@@ -114,17 +115,19 @@
             const result = document.getElementById('result');
             if (grades.hasOwnProperty(username)) {
                 result.textContent = `Current Grade for ${username}: ${grades[username]} out of ${maxGrade} (${((grades[username]/maxGrade)*100).toFixed(0)}%).`;
-                result.textContent += ` Class average is ${averageGrade.toFixed(2)} (${((averageGrade/maxGrade)*100).toFixed(0)}%).`;
+                
             } else {
                 result.textContent = `Username ${username} not found.`;
             }
         }
     </script>
 </head>
-<body>
+<body onload=" document.getElementById('classAverageBox').textContent = `Class average is ${averageGrade.toFixed(2)} (${((averageGrade/maxGrade)*100).toFixed(0)}%)`;">
     <h1>Grade Lookup</h1>
     <h2>Prof. Ana Rodrigues</h2>
     <h3>TECH117 - Foundational Project - Updated 17, Nov 2025</h3>
+    <h3 id="classAverageBox"></h3>
+
     <input type="text" id="username" placeholder="Enter N number (e.g., n12345678)">
     <button onclick="lookupGrade()">Get Current Grade</button>
     <p id="result"></p>
