@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">   
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Lookup</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input, button {
+            padding: 15px 20px;
+            margin: 5px 0;
+            font-size: 18px;
+        }
+        input {
+            width: 400px;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        
+    </style>
+    <script>
+        
+        const grades = {
+            "n10004823": 55,
+            "n01766605": 18,
+            "n01763433": 30,
+            "n01760146": 37,
+            "n01757497": 35,
+            "n01775903": 52,
+            "n01309684": 0,
+            "n01757512": 55,
+            "n01625982": 55,
+            "n01759547": 40,
+            "n10000168": 50,
+            "n01778163": 53,
+            "n01578734": 53,
+            "n01764813": 16,
+            "n10006651": 55,
+            "n01749655": 50,
+            "n01693421": 55,
+            "n01762565": 53,
+            "n01762275": 53,
+            "n10008912": 55,
+            "n01551910": 23,
+            "n01576911": 45,
+            "n01621320": 53,
+            "n01297227": 49,
+            "hare7395": 51,
+            "n01532523": 25,
+            "n01752197": 50,
+            "n01764917": 36,
+            "n01768484": 50,
+            "n10004696": 53,
+            "n01763669": 37,
+            "n01484582": 15,
+            "n01761023": 25,
+            "n01758563": 37,
+            "n01745546": 55,
+            "n01748390": 55,
+            "n01749743": 55,
+            "n01768508": 53,
+            "n01615673": 52,
+            "n01758584": 50,
+            "n01771447": 15,
+            "n01766190": 50,
+            "n01773357": 55,
+            "n01779568": 45,
+            "n01760324": 55,
+            "n01765504": 52,
+            "n01746038": 53,
+            "n10000332": 13,
+            "n01765783": 45,
+            "n01726423": 37,
+            "n10001867": 50,
+            "n01764229": 48,
+            "n01726032": 17,
+            "n01779033": 55,
+            "n01765198": 55,
+            "n10004311": 55,
+            "n01369828": 53,
+            "n01750668": 50,
+            "n01768001": 28,
+            "n01768531": 50,
+            "n01759869": 38,
+            "n01754506": 52,
+            "n01772554": 55,
+            "n01779534": 43,
+            "n01701578": 55,
+            "n01759909": 55,
+            "n01765062": 38,
+            "n01761249": 1,
+            "n10005550": 55,
+            "n01756974": 53,
+            "n10001091": 50,
+            "n01719865": 45,
+            "n10000703": 40,
+            "n01767651": 47,
+            "n10006617": 39,
+            "n01767506": 53,
+            "n10004341": 31
+        }; 
+        function lookupGrade() {
+            const username = document.getElementById('username').value;
+            const result = document.getElementById('result');
+            if (grades.hasOwnProperty(username)) {
+                result.textContent = `Current Grade for ${username}: ${grades[username]}`;
+            } else {
+                result.textContent = `Username ${username} not found.`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Grade Lookup</h1>
+    <h2>Prof. Ana Rodrigues</h2>
+    <h3>TECH117 - Foundational Project - Updated 17, Nov 2025</h3>
+    <input type="text" id="username" placeholder="Enter N number (e.g., n12345678)">
+    <button onclick="lookupGrade()">Get Current Grade</button>
+    <p id="result"></p>
+</body>
+</html>
