@@ -22,11 +22,12 @@
         #result {
             margin-top: 20px;
             font-weight: bold;
+            font-size: 20px;
         }
         
     </style>
     <script>
-        
+        const maxGrade = 55;
         const grades = {
             "n10004823": 55,
             "n01766605": 18,
@@ -110,7 +111,7 @@
             const username = document.getElementById('username').value;
             const result = document.getElementById('result');
             if (grades.hasOwnProperty(username)) {
-                result.textContent = `Current Grade for ${username}: ${grades[username]}`;
+                result.textContent = `Current Grade for ${username}: ${grades[username]} out of ${maxGrade} (${((grades[username]/maxGrade)*100).toFixed(0)}%)`;
             } else {
                 result.textContent = `Username ${username} not found.`;
             }
